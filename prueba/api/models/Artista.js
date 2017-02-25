@@ -8,7 +8,25 @@
 module.exports = {
 
   attributes: {
-
+    nombre: {
+      type: 'string',
+      require: true,
+      size: 20
+    },
+    estilo: {
+      type: 'string',
+      require: true,
+      size: 20
+    },
+    paisResidencia: {
+      type: 'string',
+      require: true,
+      enum: ['Ecuador', 'Uruguay', 'Brasil', 'Argentina', 'Peru', 'Colombia']
+    },
+    idAlbum: {
+      model: 'Album',
+      required: true
+    }
   }
 };
 

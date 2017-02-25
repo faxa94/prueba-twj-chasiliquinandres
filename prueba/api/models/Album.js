@@ -8,7 +8,24 @@
 module.exports = {
 
   attributes: {
-
+    nombre: {
+      type: 'string',
+      required: true,
+      primaryKey: true,
+      unique: true
+    },
+    fechaLanzamiento: {
+      type: 'string',
+      required: true,
+    },
+    urlPortada: {
+      type: 'string',
+      required: true,
+    },
+    artista: {
+      collection: 'Artista',
+      via: 'idAlbum'
+    }
   }
 };
 
