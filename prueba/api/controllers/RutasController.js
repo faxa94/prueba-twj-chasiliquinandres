@@ -22,7 +22,6 @@ module.exports = {
         var parametros = req.allParams();
         Album.findOne({ nombre: parametros.nombre }).exec(function (error, encontrados) {
             if (error)
-                //MANDARA A LA VISTA ERROR
                 return res.serverError()
             return res.view('Album/editarAlbum', { album: encontrados })
         });

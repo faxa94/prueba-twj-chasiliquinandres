@@ -15,13 +15,22 @@ module.exports = {
                 fechaLanzamiento: parametros.fechaLanzamiento,
                 urlPortada: parametros.urlPortada
             }).exec(function (error, albumCreado) {
-                if (error) return res.serverError();
+                if (error) return res.view('error', {
+                    error: {
+                        descripcion: 'No se completo la operacion Crear nuevo album' + error,
+                        url: '/nuevoAlbum'
+                    }
+                });
                 sails.log.info(albumCreado);
                 return res.view('Inicio/home');
             })
-
         } else {
-            console.log('metodo no permitido');
+            return res.view('error', {
+                error: {
+                    descripcion: 'Metodo no permitido',
+                    url: '/nuevoAlbum'
+                }
+            });
         }
     },
     editarAlbum: function (req, res) {
@@ -35,14 +44,22 @@ module.exports = {
                     urlPortada: parametros.urlPortada
                 }
             ).exec(function (error, albumActualizado) {
-                if (error) return res.serverError();
+                if (error) return res.view('error', {
+                    error: {
+                        descripcion: 'No se completo la operacion Editar album' + error,
+                        url: '/editarAlbum'
+                    }
+                });
                 sails.log.info(albumActualizado);
                 return res.view('Inicio/home');
             });
-
-
         } else {
-            console.log('metodo no permitido');
+            return res.view('error', {
+                error: {
+                    descripcion: 'Metodo no permitido',
+                    url: '/editarAlbum'
+                }
+            });
         }
     }
 };
