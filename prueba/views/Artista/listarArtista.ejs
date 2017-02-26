@@ -1,0 +1,17 @@
+  <div class="row">
+   <% for(var i=0; i<artista.length; i++){ %>
+        <div class="col-lg-4">
+          <div class="jumbotron">
+          <h2><%=artista[i].nombre%></h2>
+          <p><%=artista[i].estilo%></p>
+          <p><%=artista[i].idAlbum%></p>
+          <p><%=artista[i].paisResidencia%></p>
+          <p>
+          <a class="btn btn-danger" href="/Artista/destroy/<%=artista[i].id%>" role="button">Borrar</a>
+          <a class="btn btn-primary" href="/editarArtista?id=<%=artista[i].id%>" role="button">Editar »</a>
+          </p>
+              </div>
+        </div>
+   <%  } %>
+
+  </div>

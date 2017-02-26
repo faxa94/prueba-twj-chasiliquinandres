@@ -1,0 +1,41 @@
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Nuevo Artista</h1>      
+    <p>Si ya creastes un artista, puedes realizar modificaciones o eliminar a un artista en las pestañas
+     Artista</p>
+    <div class="container-fluid text-left">
+    <form action="Artista/crearArtista" method="post">
+    <div class="col-md-6">
+    <div class="form-group">
+    <label>Nombres Completos</label>
+    <input  required type="text" class="form-control"  placeholder="Nombres Completos" name="nombre">
+    </div>
+    <div class="form-group">
+    <label>Genero Musical</label>
+    <input  required type="text" class="form-control"  placeholder="Estilo" name="estilo">
+    </div>
+    <div class="form-group">
+    <label for="">Album</label>
+    <select class="form-control" name="idAlbum">
+      <% for(var i=0; i<album.length; i++){ %>
+        <option value='<%=album[i].nombre%>'>  <%=album[i].nombre%>  </option>
+       <%  } %>
+    </select>
+    </div>
+    <br>
+    <div class="form-group">
+    <label>Pais de Residencia</label>
+    <select class="form-control" name="paisResidencia">
+      <option value='Ecuador'>Ecuador</option>
+      <option value='Uruguay'>Uruguay</option>
+      <option value='Brasil'>Brasil</option>
+      <option value='Argentina'>Argentina</option>
+      <option value='Colombia'>Colombia</option>
+    </select>   
+    </div>
+    <button type="submit" class="btn btn-success">Nuevo Album</button>
+    </div>
+    </form>
+    </div>
+  </div>
+</div>

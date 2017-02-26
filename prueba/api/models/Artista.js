@@ -10,18 +10,18 @@ module.exports = {
   attributes: {
     nombre: {
       type: 'string',
-      require: true,
+      required: true,
       size: 20
     },
     estilo: {
       type: 'string',
-      require: true,
+      required: true,
       size: 20
     },
     paisResidencia: {
       type: 'string',
-      require: true,
-      enum: ['Ecuador', 'Uruguay', 'Brasil', 'Argentina', 'Peru', 'Colombia']
+      required: true,
+      enum: ['Ecuador', 'Uruguay', 'Brasil', 'Argentina', 'Colombia']
     },
     idAlbum: {
       model: 'Album',

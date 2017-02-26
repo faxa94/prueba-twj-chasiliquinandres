@@ -1,0 +1,19 @@
+
+
+  <div class="row">
+
+   <% for(var i=0; i<album.length; i++){ %>
+        <div class="col-lg-4">
+          <div class="jumbotron">
+          <h2><%=album[i].nombre%></h2>
+          <p><%=album[i].fechaLanzamiento%></p>
+          <p><%=album[i].urlPortada%></p>
+          <p>
+          <a class="btn btn-danger" href="/Album/destroy/<%=album[i].nombre%>" role="button">Borrar</a>
+          <a class="btn btn-primary" href="/editarAlbum?nombre=<%=album[i].nombre%>" role="button">Editar »</a>
+          </p>
+              </div>
+        </div>
+   <%  } %>
+
+  </div>
